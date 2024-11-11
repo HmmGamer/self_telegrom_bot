@@ -12,7 +12,6 @@ namespace TelegramBot2
             string botToken = "7590120796:AAEd3CPsO4CBjrgDiXZSXDrEx_jzT2yszKM";
             _DataSet.InitializeFoodTypes();
 
-
             MessageChecker messenger = new MessageChecker();
             TelegramBotHandler botHandler = new TelegramBotHandler();
 
@@ -24,15 +23,17 @@ namespace TelegramBot2
             //await messenger._CheckMsgFunction("#sell joje 20", "mmd");
             
 
-
             //await messenger._CheckMsgFunction("#sell kebab 20", "dna");
-            //await messenger._CheckMsgFunction("#sell joje 25", "adw");
-            //await messenger._CheckMsgFunction("/show_average joje", "adw");
-
+            
+            
             await CommandRegistry._RegisterCommandsAsync(botToken);
-
-            Console.WriteLine("Bot is running... Press Enter to exit.");
-            Console.ReadLine();
+            Console.WriteLine("Bot is running...");
+            while (true)
+            {
+                Task.Delay(1000).Wait();
+            }
+            
+            //Console.ReadLine();
         }
     }
 }

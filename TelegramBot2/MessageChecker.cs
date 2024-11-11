@@ -22,7 +22,6 @@ namespace TelegramBot2
                 await _CheckForCommand(iMsg);
             }
         }
-
         public void _CheckForNewOrder(string iNewOrder, _AllOrderTypes iType, string userName)
         {
             bool foodAdded = false;

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace TelegramBot2.Data
 {
     public static class LogDataBase
