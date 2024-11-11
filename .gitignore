@@ -5,3 +5,9 @@
 .vs/slnx.sqlite
 .vs/slnx.sqlite
 .vs/slnx.sqlite
+*.vsidx
+/.vs
+/.vs
+/.vs/self_telegrom_bot
+.vs/slnx.sqlite
+.vs/self_telegrom_bot/v17/.wsuo
