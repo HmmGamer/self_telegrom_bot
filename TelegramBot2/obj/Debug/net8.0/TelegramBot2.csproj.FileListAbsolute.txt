@@ -21,7 +21,6 @@ C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\TelegramB
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\TelegramBot2.runtimeconfig.json
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\TelegramBot2.dll
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\TelegramBot2.pdb
-C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\Telegram.Bot.dll
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.csproj.AssemblyReference.cache
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.GeneratedMSBuildEditorConfig.editorconfig
@@ -29,9 +28,10 @@ C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramB
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.AssemblyInfo.cs
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.csproj.CoreCompileInputs.cache
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.sourcelink.json
-C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.csproj.CopyComplete
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.dll
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\refint\TelegramBot2.dll
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.pdb
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.genruntimeconfig.cache
 C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\ref\TelegramBot2.dll
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Debug\net8.0\TelegramBot2.csproj.CopyComplete

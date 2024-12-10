@@ -1,0 +1,6 @@
+C:\Users\stmh1\Desktop\self_telegrom_bot\publish\TelegramBot2
+C:\Users\stmh1\Desktop\self_telegrom_bot\publish\TelegramBot2.dll
+C:\Users\stmh1\Desktop\self_telegrom_bot\publish\TelegramBot2.deps.json
+C:\Users\stmh1\Desktop\self_telegrom_bot\publish\TelegramBot2.runtimeconfig.json
+C:\Users\stmh1\Desktop\self_telegrom_bot\publish\TelegramBot2.pdb
+C:\Users\stmh1\Desktop\self_telegrom_bot\publish\Telegram.Bot.dll

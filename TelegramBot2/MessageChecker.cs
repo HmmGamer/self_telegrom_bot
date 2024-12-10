@@ -8,7 +8,8 @@ namespace TelegramBot2
     {
         public async Task _CheckMsgFunction(string iMsg, string userName)
         {
-            if (iMsg.Length < 5) return;
+            Console.WriteLine(iMsg + " was received"); 
+            //if (iMsg.Length < 5) return;
             if (iMsg.StartsWith("#sell"))
             {
                 _CheckForNewOrder(iMsg, _AllOrderTypes.sell, userName);
@@ -21,6 +22,7 @@ namespace TelegramBot2
             {
                 await _CheckForCommand(iMsg);
             }
+           
         }
         public void _CheckForNewOrder(string iNewOrder, _AllOrderTypes iType, string userName)
         {
@@ -48,6 +50,7 @@ namespace TelegramBot2
                 Console.WriteLine("No matching food found in database.");
             }
             DataStorage.SaveLogsToCsv();
+            
         }
         public async Task _CheckForCommand(string iCmd)
         {

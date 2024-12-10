@@ -1,5 +1,4 @@
-﻿
-namespace TelegramBot2.Data
+﻿namespace TelegramBot2.Data
 {
     public static class LogDataBase
     {
@@ -12,6 +11,7 @@ namespace TelegramBot2.Data
             _sellDataBase = new List<FoodLogStructure>();
             _buyDataBase = new List<FoodLogStructure>();
         }
+
         public static void _AddLog(_FoodType iFoodType, _AllOrderTypes iOrderType, float iFoodPrice, string iUserName)
         {
             FoodLogStructure logEntry = new FoodLogStructure
@@ -20,27 +20,45 @@ namespace TelegramBot2.Data
                 _orderType = iOrderType,
                 _foodPrice = iFoodPrice,
                 _userName = iUserName,
-                _orderTime = DateTime.Now.ToString("HH:mm ddd")
+                _orderTime = DateTime.Now.ToString("HH:mm ddd")  // Store in the correct format
             };
+
             List<FoodLogStructure> targetDatabase = (iOrderType == _AllOrderTypes.sell) ? _sellDataBase : _buyDataBase;
+
             for (int i = 0; i < targetDatabase.Count; i++)
             {
                 if (targetDatabase[i]._userName == iUserName)
                 {
                     targetDatabase[i] = logEntry;
-                    targetDatabase.Sort((x, y) => DateTime.Compare(DateTime.ParseExact(y._orderTime, "HH:mm ddd", null), DateTime.ParseExact(x._orderTime, "HH:mm ddd", null)));
+
+                    // Sorting with TryParseExact to prevent errors due to incorrect formats
+                    targetDatabase.Sort((x, y) =>
+                    {
+                        DateTime dateX, dateY;
+                        bool parsedX = DateTime.TryParseExact(x._orderTime, "HH:mm ddd", null, System.Globalization.DateTimeStyles.None, out dateX);
+                        bool parsedY = DateTime.TryParseExact(y._orderTime, "HH:mm ddd", null, System.Globalization.DateTimeStyles.None, out dateY);
+
+                        if (!parsedX || !parsedY)
+                        {
+                            // Handle the case where the date is invalid (e.g., set a default value or handle it based on your requirements)
+                            return 0;  // Do not change order if there's an invalid date
+                        }
+
+                        return dateY.CompareTo(dateX);  // Sort in descending order
+                    });
+
                     return;
                 }
             }
+
             targetDatabase.Insert(0, logEntry);
-            //Console.WriteLine("the food " + iFoodType + " was added");
         }
         public static string _ShowSellLogs()
         {
             List<string> logEntries = new List<string>();
             foreach (var log in _sellDataBase)
             {
-                string userName = log._userName.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName;
+                string userName = log._userName?.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName ?? "";
                 logEntries.Add($"{userName} => {log._foodType._foodName}: {log._foodPrice}, {log._orderTime}");
             }
             return string.Join("\n", logEntries);
@@ -51,7 +69,7 @@ namespace TelegramBot2.Data
             List<string> logEntries = new List<string>();
             foreach (var log in _buyDataBase)
             {
-                string userName = log._userName.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName;
+                string userName = log._userName?.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName ?? "";
                 logEntries.Add($"{userName} => {log._foodType._foodName}: {log._foodPrice}, {log._orderTime}");
             }
             return string.Join("\n", logEntries);
@@ -65,13 +83,12 @@ namespace TelegramBot2.Data
                 if (log._foodType._foodName.Equals(iFoodName, StringComparison.OrdinalIgnoreCase) ||
                     Array.Exists(log._foodType._alternativeNames, alt => alt.Equals(iFoodName, StringComparison.OrdinalIgnoreCase)))
                 {
-                    string userName = log._userName.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName;
+                    string userName = log._userName?.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName ?? "";
                     logEntries.Add($"{userName} => {log._foodType._foodName}: {log._foodPrice}, {log._orderTime}");
                 }
             }
             return logEntries.Count > 0 ? string.Join("\n", logEntries) : $"No buy logs found for {iFoodName}.";
         }
-
         public static string _GetSpecificSellLog(string iFoodName)
         {
             List<string> logEntries = new List<string>();
@@ -80,7 +97,7 @@ namespace TelegramBot2.Data
                 if (log._foodType._foodName.Equals(iFoodName, StringComparison.OrdinalIgnoreCase) ||
                     Array.Exists(log._foodType._alternativeNames, alt => alt.Equals(iFoodName, StringComparison.OrdinalIgnoreCase)))
                 {
-                    string userName = log._userName.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName;
+                    string userName = log._userName?.Length > _USER_NAME_LENGTH ? log._userName.Substring(0, _USER_NAME_LENGTH) : log._userName ?? "";
                     logEntries.Add($"{userName} => {log._foodType._foodName}: {log._foodPrice}, {log._orderTime}");
                 }
             }
@@ -111,6 +128,7 @@ namespace TelegramBot2.Data
             return $"{iFoodName} average price: {averagePrice:0.00}";
         }
     }
+
     public class _FoodType
     {
         public static List<_FoodType> _AllFoodTypes;
@@ -133,10 +151,12 @@ namespace TelegramBot2.Data
             return _foodName;
         }
     }
+
     public enum _AllOrderTypes
     {
         buy, sell
     }
+
     public class FoodLogStructure
     {
         public _FoodType _foodType { get; set; }
@@ -145,6 +165,7 @@ namespace TelegramBot2.Data
         public string _userName { get; set; }
         public string _orderTime { get; set; }
     }
+
     public class _DataSet
     {
         public static void InitializeFoodTypes()

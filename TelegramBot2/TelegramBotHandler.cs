@@ -36,7 +36,7 @@ namespace TelegramBot2.Handler
 
                 // Check if the message is a command and possibly includes the bot's username
                 string messageText = update.Message.Text.Trim();
-                if (messageText.StartsWith("/") &&
+                if (/*messageText.StartsWith("/") &&*/
                     (messageText.EndsWith($"@{botUsername}") || !messageText.Contains('@')))
                 {
                     // Remove the bot's @username if present

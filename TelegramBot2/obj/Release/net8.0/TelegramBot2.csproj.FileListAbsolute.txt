@@ -1,0 +1,17 @@
+C:\Users\stmh1\Desktop\build of telegram\TelegramBot2.exe
+C:\Users\stmh1\Desktop\build of telegram\TelegramBot2.deps.json
+C:\Users\stmh1\Desktop\build of telegram\TelegramBot2.runtimeconfig.json
+C:\Users\stmh1\Desktop\build of telegram\TelegramBot2.dll
+C:\Users\stmh1\Desktop\build of telegram\TelegramBot2.pdb
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.csproj.AssemblyReference.cache
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.AssemblyInfoInputs.cache
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.AssemblyInfo.cs
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.csproj.CoreCompileInputs.cache
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.sourcelink.json
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\Telegram.584E03EF.Up2Date
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.dll
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\refint\TelegramBot2.dll
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.pdb
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\TelegramBot2.genruntimeconfig.cache
+C:\Users\stmh1\Desktop\self_telegrom_bot\TelegramBot2\obj\Release\net8.0\ref\TelegramBot2.dll
